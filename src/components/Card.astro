@@ -1,0 +1,28 @@
+---
+interface CardProps {
+    title: string;
+    subtitle: string;
+    dates: string;
+    description: string[];
+    achievements?: string;
+}
+
+const { title, subtitle, dates, description, achievements } = Astro.props as CardProps;
+
+// Ensure description is an array; default to empty array if not
+const safeDescription = Array.isArray(description) ? description : [];
+---
+
+<div class="bg-white p-6 rounded-lg shadow-md mb-4">
+    <h3 class="text-xl font-semibold">{title}</h3>
+    <p class="text-gray-600">{subtitle}</p>
+    <p class="text-gray-500 italic">{dates}</p>
+    <ul class="list-disc pl-5 mt-2">
+        {safeDescription.map((item) => (
+            <li>{item}</li>
+        ))}
+    </ul>
+    {achievements && (
+        <p class="mt-2 font-semibold">Key Achievement: {achievements}</p>
+    )}
+</div>

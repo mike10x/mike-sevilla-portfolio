@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Mike Sevilla - SAP Consultant</title>
+    <meta name="description" content="SAP Consultant with 13+ years of experience in ABAP, S/4HANA, and CRM." />
+	<link rel="stylesheet" href="/styles/global.css" />	
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <Header />
+    <main class="max-w-4xl mx-auto px-4 p-4">
+      <section class="text-center py-12">
+        <img src="/images/mike-sevilla.jpg" alt="Mike Sevilla" class="w-32 h-32 rounded-full mx-auto mb-4" />
+        <h1 class="text-4xl font-bold text-gray-800">Mike Donald Sevilla</h1>
+        <p class="text-xl text-gray-600">SAP Consultant with 13+ Years of Expertise</p>
+        <a href="/about" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Learn More</a>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
